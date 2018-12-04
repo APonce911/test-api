@@ -10,7 +10,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
 
   def update
-    if @product.update(prodcut_params)
+    if @product.update(product_params)
       render :show
     else
       render_error
