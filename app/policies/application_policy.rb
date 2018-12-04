@@ -23,7 +23,8 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    #everyone can update
+    true
   end
 
   def edit?
