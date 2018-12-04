@@ -5,8 +5,8 @@ class ProductPolicy < ApplicationPolicy
     end
 
     def show?
+      # everyone can access show endpoint of a product
       return true
     end
-    # everyone can access show endpoint of a product
   end
 end
