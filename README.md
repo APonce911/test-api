@@ -1,48 +1,57 @@
-CRUD API
+<h1>CRUD API</h1>
 
-Endpoints
+<h2>Endpoints</h2>
 
-#Index
-  GET http://localhost:3000/api/v1/products
+<h3>#Index</h3>
+  <p>GET http://localhost:3000/api/v1/products</p>
 
-#Show
-  GET http://localhost:3000/api/v1/products/:id
+<h3>#Show</h3>
+  <p>GET http://localhost:3000/api/v1/products/:id</p>
 
-#Create
-  POST http://localhost:3000/api/v1/products
+<h3>#Create</h3>
+  <p>POST http://localhost:3000/api/v1/products</p>
 
-  Headers
+  <h4>Headers</h4>
+  <p>
    'Content-Type: application/json'
    'X-User-Email: your@email.com'
    'X-User-Token: your-token'
+  </p>
 
-  Body
+  <h4>Body</h4>
+  <p>
     {
       "description": "product description",
       "price": integer,
       "quantity": integer
     }
+  </p>
 
-#Update
-  PATCH http://localhost:3000/api/v1/products/:id
+<h3>#Update</h3>
+  <p>PATCH http://localhost:3000/api/v1/products/:id</p>
 
-  Headers
+  <h4>Headers</h4>
+  <p>
    'Content-Type: application/json'
    'X-User-Email: your@email.com'
    'X-User-Token: your-token'
+  </p>
 
-  Body
+  <p>
     {
       "description": "product description",
       "price": integer,
       "quantity": integer
     }
+  </p>
 
-#DESTROY
-  DELETE http://localhost:3000/api/v1/products/:id
+<h3>#Destroy</h3>
+  <p>DELETE http://localhost:3000/api/v1/products/:id</p>
 
-  Headers
+  <h4>Headers</h4>
+  <p>
    'X-User-Email: your@email.com'
    'X-User-Token: your-token'
+  </p>
 
 
