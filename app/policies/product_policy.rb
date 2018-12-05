@@ -16,4 +16,9 @@ class ProductPolicy < ApplicationPolicy
     return true
   end
 
+  def create?
+    # anyone logged can create a product
+    return !user.nil?
+  end
+
 end
