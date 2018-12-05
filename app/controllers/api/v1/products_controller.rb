@@ -32,6 +32,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def destroy
     @product.destroy
+    head :no_content
   end
 
   private

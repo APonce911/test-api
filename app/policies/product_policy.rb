@@ -21,4 +21,8 @@ class ProductPolicy < ApplicationPolicy
     return !user.nil?
   end
 
+  def destroy?
+    update?
+  end
+
 end
