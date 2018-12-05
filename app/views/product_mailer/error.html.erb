@@ -1,5 +1,4 @@
-<h1>Product#error</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/product_mailer/error.html.erb
-</p>
+<p>Ops <%= @user.name %>,</p>
+<p>something went wrong...</p>
+<p>please try again, or contact us on (011)99575-7328</p>
+<%= link_to "Back to API Index", api_v1_products_url %>
