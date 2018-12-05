@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-  before_action :set_product, only: [:show, :update]
+  before_action :set_product, only: [:show, :update, :destroy]
 
   def index
     @products = policy_scope(Product)
@@ -28,7 +28,10 @@ class Api::V1::ProductsController < Api::V1::BaseController
     else
       render_error
     end
+  end
 
+  def destroy
+    @product.destroy
   end
 
   private
