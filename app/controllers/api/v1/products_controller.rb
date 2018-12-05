@@ -12,8 +12,10 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def update
     if @product.update(product_params)
+      ProductMailer.update_confirmation(@product).deliver_now
       render :show
     else
+      ProductMailer.error(@product).deliver_now
       render_error
     end
   end
@@ -24,14 +26,17 @@ class Api::V1::ProductsController < Api::V1::BaseController
     authorize @product
 
     if @product.save
+      ProductMailer.create_confirmation(@product).deliver_now
       render :show, status: :created
     else
+      ProductMailer.error(@product).deliver_now
       render_error
     end
   end
 
   def destroy
     @product.destroy
+    ProductMailer.delete_confirmation(@product).deliver_now
     head :no_content
   end
 
