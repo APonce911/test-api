@@ -5,13 +5,13 @@ class ProductMailer < ApplicationMailer
   #
   #   en.product_mailer.create_confirmation.subject
   #
-  def create_confirmation
+  def create_confirmation(user)
     @user = user  # Instance variable => available in view
 
     mail(to: @user.email, subject: 'Product created!')
   end
 
-  def update_confirmation
+  def update_confirmation(user)
     @user = user  # Instance variable => available in view
 
     mail(to: @user.email, subject: 'Product updated!')
@@ -22,7 +22,7 @@ class ProductMailer < ApplicationMailer
   #
   #   en.product_mailer.delete_confirmation.subject
   #
-  def delete_confirmation
+  def delete_confirmation(user)
     @user = user  # Instance variable => available in view
 
     mail(to: @user.email, subject: 'Product deleted!')
@@ -33,7 +33,7 @@ class ProductMailer < ApplicationMailer
   #
   #   en.product_mailer.error.subject
   #
-  def error
+  def error(user)
     @user = user  # Instance variable => available in view
 
     mail(to: @user.email, subject: 'An error occoured')
