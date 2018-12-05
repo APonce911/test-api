@@ -18,6 +18,19 @@ class Api::V1::ProductsController < Api::V1::BaseController
     end
   end
 
+  def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+    authorize @product
+
+    if @product.save
+      render :show, status: :created
+    else
+      render_error
+    end
+
+  end
+
   private
 
   def product_params
