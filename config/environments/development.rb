@@ -30,7 +30,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp #:letter_opener
    #:letter_opener
   config.action_mailer.default_url_options = { host: 'localhost', port: 3003 }
 
