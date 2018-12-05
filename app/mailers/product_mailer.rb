@@ -6,9 +6,15 @@ class ProductMailer < ApplicationMailer
   #   en.product_mailer.create_confirmation.subject
   #
   def create_confirmation
-    @greeting = "Hi"
+    @user = user  # Instance variable => available in view
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'Product created!')
+  end
+
+  def update_confirmation
+    @user = user  # Instance variable => available in view
+
+    mail(to: @user.email, subject: 'Product updated!')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,9 +23,9 @@ class ProductMailer < ApplicationMailer
   #   en.product_mailer.delete_confirmation.subject
   #
   def delete_confirmation
-    @greeting = "Hi"
+    @user = user  # Instance variable => available in view
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'Product deleted!')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -28,8 +34,8 @@ class ProductMailer < ApplicationMailer
   #   en.product_mailer.error.subject
   #
   def error
-    @greeting = "Hi"
+    @user = user  # Instance variable => available in view
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'An error occoured')
   end
 end
