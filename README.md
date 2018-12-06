@@ -52,3 +52,12 @@
   <p> 'X-User-Email: your@email.com'</p>
   <p> 'X-User-Token: your-token'</p>
 
+<h3>#Buy</h3>
+  <p>GET http://localhost:3000/api/v1/products/:id/buy</p>
+
+  <h4>Headers</h4>
+
+  <p> 'Content-Type: application/json'</p>
+  <p> 'X-User-Email: your@email.com'</p>
+  <p> 'X-User-Token: your-token'</p>
+
