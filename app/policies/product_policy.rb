@@ -25,4 +25,9 @@ class ProductPolicy < ApplicationPolicy
     update?
   end
 
+  def buy?
+    # anyone logged can buy a product
+    create?
+  end
+
 end
