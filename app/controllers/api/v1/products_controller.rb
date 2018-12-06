@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy, :buy]
 
   def index
     @products = policy_scope(Product)
@@ -38,6 +38,19 @@ class Api::V1::ProductsController < Api::V1::BaseController
     @product.destroy
     ProductMailer.delete_confirmation(@product.user).deliver_now
     head :no_content
+  end
+
+  def buy
+    Stripe.api_key = ENV['STRIPE_KEY']
+
+    @charge = Stripe::Charge.create({
+        amount: @product.price*100,
+        currency: 'BRL',
+        source: 'tok_visa',
+        receipt_email: current_user.email
+    })
+
+    render :buy
   end
 
   private
