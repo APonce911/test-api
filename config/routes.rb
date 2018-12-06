@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   # root to:'api/v1/products#index', defaults: { format: :json }
   get '/', to: 'pages#home'
-
+  get '/api/v1/products/:id/buy', to: 'api/v1/products#buy' , as: :api_v1_product_buy, defaults: {:format=>:json}
 
 end
