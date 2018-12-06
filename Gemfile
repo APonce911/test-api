@@ -10,6 +10,8 @@ gem 'rails', '5.2.1'
 gem 'redis'
 gem 'pundit'
 gem "simple_token_authentication"
+gem 'stripe'
+
 
 
 gem 'autoprefixer-rails'
